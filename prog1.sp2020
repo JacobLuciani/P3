@@ -1,0 +1,11 @@
+
+
+declare x := 0 ;
+declare y := 1 ;
+declare z := 2 ;
+{
+  goto z ;
+    iffy [ z < 0 ] then
+      iffy [ x < > 0 ] then 
+  label x ; ; ;
+}
