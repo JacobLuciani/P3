@@ -24,9 +24,9 @@ StaticSem::StaticSem(Node *root) {
 //adds identifier to list of variables on definition, checking for erroneous redefintion
 void StaticSem::insert(Node *root) {
 	
-	//declaration nodes store nonterminals as: declare identifier := number ;
-	//thus the identifier will always be the second element, and must exist or it would not have passed the parser
-	Token identifier = root->members[1];
+	//declaration nodes store nonterminals as: identifier number ;
+	//thus the identifier will always be the first element, and must exist or it would not have passed the parser
+	Token identifier = root->members[0];
 	
 	//search for identifier in list of variables to ensure no double definition 
 	if (find(variables.begin(), variables.end(), identifier.tokenInstance) == variables.end()) {
